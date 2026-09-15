@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: {
+    // Deploy target: standalone Node server (.output/server/index.mjs) for Render.
+    // The Lovable sandbox overrides this back to cloudflare-module, so Lovable builds are unaffected.
+    preset: "node-server",
+  },
 });
